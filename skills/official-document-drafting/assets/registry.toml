@@ -1,0 +1,160 @@
+# 文种注册表：导出器与校验器共用的单一数据源。
+# category：法定公文 / 常见正式材料；required_sections 供 check_draft.py 使用。
+#
+# 说明：决议（resolution）已按用户要求从模板列表移除，不再登记在这里；
+# 参考文件 references/doc-types/resolution.md 仍留档，需要恢复时把下面这段加回即可：
+#   [[doc_types]]
+#   id = "resolution"
+#   name = "决议"
+#   aliases = ["决议"]
+#   category = "法定公文"
+#   description = "会议讨论通过的重要决策事项。"
+#   font_profile = "official-standard"
+#   layout_profile = "official-standard"
+#   required_sections = ["标题", "正文"]
+#   reference = "references/doc-types/resolution.md"
+
+[[doc_types]]
+id = "public-notice"
+name = "通告"
+aliases = ["通告"]
+category = "法定公文"
+description = "在一定范围内公布应当遵守或者周知的事项。"
+font_profile = "official-standard"
+layout_profile = "official-standard"
+required_sections = ["标题", "正文", "落款"]
+reference = "references/doc-types/public-notice.md"
+
+[[doc_types]]
+id = "circular"
+name = "通报"
+aliases = ["通报"]
+category = "法定公文"
+description = "用于表彰先进、批评错误或传达重要情况。"
+font_profile = "official-standard"
+layout_profile = "official-standard"
+required_sections = ["标题", "主送单位", "正文", "落款"]
+reference = "references/doc-types/circular.md"
+
+[[doc_types]]
+id = "letter"
+name = "函"
+aliases = ["函"]
+category = "法定公文"
+description = "用于平行机关或不相隶属机关之间商洽、询问、答复。"
+font_profile = "official-standard"
+layout_profile = "official-standard"
+required_sections = ["标题", "主送单位", "正文", "落款"]
+reference = "references/doc-types/letter.md"
+
+[[doc_types]]
+id = "minutes"
+name = "纪要"
+aliases = ["纪要", "会议纪要"]
+category = "法定公文"
+description = "用于记载会议主要情况和议定事项。"
+font_profile = "official-standard"
+layout_profile = "official-standard"
+required_sections = ["标题", "会议信息", "正文"]
+reference = "references/doc-types/minutes.md"
+
+[[doc_types]]
+id = "special-report"
+name = "情况专报"
+aliases = ["情况专报", "信息专报", "舆情专报", "专报"]
+category = "常见正式材料"
+description = "用于向领导或上级报送专题信息、风险情况和舆情态势。"
+font_profile = "internal-readable"
+layout_profile = "internal-readable"
+required_sections = ["标题", "报送对象", "正文"]
+reference = "references/doc-types/special-report.md"
+
+[[doc_types]]
+id = "speech"
+name = "讲话稿"
+aliases = ["讲话稿", "发言稿"]
+category = "常见正式材料"
+description = "用于领导讲话、会议发言、动员部署和总结点评。"
+font_profile = "speech-readable"
+layout_profile = "speech-readable"
+required_sections = ["标题", "称谓", "正文"]
+reference = "references/doc-types/speech.md"
+
+[[doc_types]]
+id = "summary"
+name = "工作总结"
+aliases = ["工作总结", "总结", "总结材料"]
+category = "常见正式材料"
+description = "用于阶段性复盘、年度总结、专项工作总结。"
+font_profile = "internal-readable"
+layout_profile = "internal-readable"
+required_sections = ["标题", "正文"]
+reference = "references/doc-types/summary.md"
+
+[[doc_types]]
+id = "crisis-report"
+name = "危机处置报告"
+aliases = ["危机处置报告", "危机报告", "处置报告", "整改报告"]
+category = "常见正式材料"
+description = "用于发生安全事件、突发事件或收到主管部门整改通知后，向相对方报告事实、经过与整改情况。"
+font_profile = "official-standard"
+layout_profile = "official-standard"
+required_sections = ["标题", "主送单位", "正文", "落款"]
+reference = "references/doc-types/crisis-report.md"
+
+# 模板表单字段：DSH 插件的模板 UI 可直接读取，生成结构化输入。
+[[doc_types.fields]]
+key = "event_subject"
+label = "事件主体"
+required = true
+placeholder = "报告单位全称"
+multiline = false
+
+[[doc_types.fields]]
+key = "counterpart"
+label = "相对方"
+required = true
+placeholder = "主送单位，如主管部门、监管单位"
+multiline = false
+
+[[doc_types.fields]]
+key = "event_name"
+label = "事件名称"
+required = true
+placeholder = "如：某系统异常访问事件"
+multiline = false
+
+[[doc_types.fields]]
+key = "occurred_at"
+label = "发现/接报时间"
+required = false
+placeholder = "如：2026年X月X日；不确定可留空"
+multiline = false
+
+[[doc_types.fields]]
+key = "process"
+label = "主要经过"
+required = true
+placeholder = "按时间线填写：如何发现、涉及系统/人员、原因、影响、已采取处置"
+multiline = true
+
+[[doc_types.fields]]
+key = "result"
+label = "处置结果"
+required = true
+placeholder = "事件是否控制、风险是否消除、有无数据/人员/财产损失、整改完成情况"
+multiline = true
+
+[[doc_types.fields]]
+key = "rectification"
+label = "整改措施"
+required = false
+placeholder = "制度、技术、人员、监测、问责等；可留空由模型补写通用措施"
+multiline = true
+
+[[doc_types.fields]]
+key = "report_date"
+label = "落款日期"
+required = false
+placeholder = "如：2026年X月X日"
+multiline = false

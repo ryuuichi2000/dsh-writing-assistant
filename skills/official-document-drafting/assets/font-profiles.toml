@@ -1,0 +1,45 @@
+# 字体方案：只写字体名，不嵌入字体文件。
+# 目标机器需已安装对应字体；没有时请在 Word 中替换为系统可用字体，
+# 或使用 --font-preset noto-cjk / fandol 选择开源替代。
+
+[[profiles]]
+id = "official-standard"
+display_name = "法定公文标准"
+description = "适用于通知、请示、报告、函、意见等正式公文初稿。"
+header_family = "方正小标宋简体"
+title_family = "方正小标宋简体"
+heading_family = "黑体"
+subheading_family = "楷体_GB2312"
+body_family = "仿宋_GB2312"
+header_size = 26
+title_size = 22
+heading_size = 16
+body_size = 16
+
+[[profiles]]
+id = "internal-readable"
+display_name = "内部材料易读"
+description = "适用于简报、汇报材料、专报、总结、方案等内部材料。"
+header_family = "黑体"
+title_family = "黑体"
+heading_family = "黑体"
+subheading_family = "楷体_GB2312"
+body_family = "仿宋_GB2312"
+header_size = 24
+title_size = 22
+heading_size = 16
+body_size = 16
+
+[[profiles]]
+id = "speech-readable"
+display_name = "讲话稿阅读"
+description = "适用于讲话稿、会议发言稿等强调台上朗读和快速定位层次的材料。"
+header_family = "黑体"
+title_family = "黑体"
+heading_family = "黑体"
+subheading_family = "楷体_GB2312"
+body_family = "仿宋_GB2312"
+header_size = 24
+title_size = 22
+heading_size = 16
+body_size = 16

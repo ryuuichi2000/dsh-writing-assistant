@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# local development state and captures
+.devhome/
+.shots/
+exports/
+
+# generated or temporary files
+*.docx
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

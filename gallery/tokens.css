@@ -1,0 +1,120 @@
+/* 写作助手 · 设计 token
+   桌面（深一档）+ 纸（浅一档）+ 一种朱红。
+   字分两套：纸上的字用宋体（读），界面用黑体（看清）；西文先落 Georgia。 */
+:root{
+  /* 读：稿子和标题。华文中宋笔画实、屏幕上不发虚；西文交给 Georgia */
+  --font-read:Georgia,'Times New Roman','STZhongsong','STSong','Songti SC','SimSun',serif;
+  /* 界面：导航、标签、按钮、表格 */
+  --font-ui:'Noto Sans SC','Microsoft YaHei','PingFang SC',system-ui,sans-serif;
+  --font-serif:var(--font-read);
+  --font-display:var(--font-read);
+
+  /* 版面 */
+  --desk:#e9e6dd;
+  --input:#fffefa;
+  --input-edge:#918879;
+  --nav-hover:rgba(0, 0, 0, .04);
+  --nav-selected:rgba(0, 0, 0, .07);
+  --dialog-scrim:rgba(20, 18, 12, .5);
+  --button-edge:#cec9bc;
+  --selected:#dcd8cb;
+  --filter-selected:#e6e2d7;
+  --row-selected:#eeebe2;
+  --desk-ink:#5f5747;
+  --sheet:#fcfbf6;
+  --sheet-edge:#d7d2c5;
+  --tone:#f2efe5;
+  --tone-2:#e9e3d3;
+
+  /* 墨阶：整体压深一档，正文不再发灰 */
+  --ink:#24231e;
+  --body:#1f1b12;
+  --muted:#68665d;
+  --faint:#6b6456;
+  --rule:#dedbd0;
+
+  /* 强调 */
+  --accent:#9d2f1e;
+  --accent-hover:#822719;
+  --accent-soft:#f1ddd5;
+  --ok:#2a6242;
+  --warn:#7d530f;
+  --bad:#9c2b1c;
+
+  /* 字号只留六级：宋体负责"读"，黑体负责"操作与说明" */
+  --fs-1: 40px;   /* 页面标题（宋体） */
+  --fs-2: 26px;   /* 区块标题、三组、稿件标题、文种组名（宋体） */
+  --fs-3: 20px;   /* 列表标题、文种名、大输入（宋体） */
+  --fs-4: 17px;   /* 正文、文章、用户填写（宋体） */
+  --fs-5: 15px;   /* 菜单、按钮、说明句（黑体） */
+  --fs-6: 13px;   /* 标签、时间、计数、提示（黑体） */
+  --t-h1: var(--fs-1);
+  --t-h2: var(--fs-3);
+  --t-body: var(--fs-5);
+  --t-sm: var(--fs-6);
+  --t-xs: var(--fs-6);
+
+  /* 间距 */
+  --sp-1:2px; --sp-2:4px; --sp-3:8px; --sp-4:12px; --sp-5:16px; --sp-6:24px;
+  --sp-7:32px; --sp-8:40px; --sp-9:48px; --sp-10:64px; --sp-11:80px; --sp-12:96px;
+
+  /* 页面外轮廓圆角：四个角一致；宿主自己裁的那一角由这里盖过去（取 16px，比常见面板半径大） */
+  --radius-page: 16px;
+
+  --ease:cubic-bezier(.2,0,.38,.9);
+  --motion-quick:120ms;
+  --motion-panel:170ms;
+  --motion-progress:260ms;
+  --motion-pulse:1.4s;
+  color-scheme:light;
+
+  /* 旧 token 名保留成别名：页面里有内联样式还在引用 */
+  --paper:var(--sheet);
+  --grey-1:var(--tone);
+  --grey-2:var(--rule);
+  --grey-3:var(--muted);
+  --line:var(--rule);
+  --line-strong:var(--faint);
+  --line-subtle:var(--rule);
+  --text-primary:var(--ink);
+  --text-body:var(--body);
+  --text-secondary:var(--muted);
+  --text-helper:var(--muted);
+  --text-placeholder:var(--faint);
+  --seal:var(--accent);
+  --seal-soft:var(--accent-soft);
+  --accent-bright:var(--accent);
+  --accent-deep:var(--accent);
+  --accent-on:#fff;
+  --font-mono:var(--font-ui);
+}
+:root[data-scheme="dark"]{
+  --desk:#0e0d0a;
+  --input:#232019;
+  --input-edge:#837a6a;
+  --nav-hover:rgba(255, 255, 255, .07);
+  --nav-selected:rgba(255, 255, 255, .1);
+  --dialog-scrim:rgba(0, 0, 0, .65);
+  --button-edge:#655e51;
+  --selected:#343026;
+  --filter-selected:#343026;
+  --row-selected:#2b271f;
+  --accent-on:#1a1813;
+  --desk-ink:#a49b87;
+  --sheet:#1a1813;
+  --sheet-edge:#38332a;
+  --tone:#232019;
+  --tone-2:#2b271f;
+  --ink:#f5f1e6;
+  --body:#e2dccd;
+  --muted:#ada596;
+  --faint:#9a927f;
+  --rule:#3a352b;
+  --accent:#e07a62;
+  --accent-hover:#ee917a;
+  --accent-soft:#3b2620;
+  --ok:#6cb98c;
+  --warn:#d0a355;
+  --bad:#e0776d;
+  color-scheme:dark;
+}

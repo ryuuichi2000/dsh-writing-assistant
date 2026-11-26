@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN" data-scheme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>写作助手</title>
+<meta name="description" content="在 DeepSeek Harness 中起草文章、公文，并管理和编辑自己的稿件。">
+<link rel="icon" href="icon.png">
+<script src="scheme.js"></script>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage">
+<header class="mast">
+  <a class="mark" href="#/write">写作助手<i></i></a>
+  <nav class="nav" aria-label="导航">
+    <a href="#/write" data-view="write">写作台</a>
+    <a href="#/works" data-view="works">稿件库<span class="nav-count" data-count="works"></span></a>
+    <a href="#/voice" data-view="voice">语气档案</a>
+  </nav>
+  <div class="mast-r">
+    <span class="job" id="mast-job" hidden></span>
+    <a class="mast-help" href="#/about" data-view="about"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.3c.3-2.1 4.9-2.4 4.9.3 0 1.9-2.6 2.1-2.6 4.1M11.8 16.5h.05"/></svg>使用说明</a>
+  </div>
+</header>
+
+<main class="sheet" id="app"><p class="initial-load" role="status">正在载入写作助手…</p></main>
+</div>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" hidden>
+  <div class="viewer-bar">
+    <button class="ibtn viewer-back" data-viewer="back" title="返回稿件库" aria-label="返回稿件库">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    </button>
+    <span class="viewer-title" id="viewer-title"></span>
+    <span class="viewer-note" id="viewer-note"></span>
+    <span class="viewer-actions" id="viewer-actions" hidden></span>
+    <button class="ibtn" data-viewer="aside" title="批注" aria-label="批注">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM15 5v14"/></svg>
+    </button>
+    <button class="ibtn" data-viewer="full" title="全屏" aria-label="全屏">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    </button>
+    <button class="ibtn" data-viewer="close" title="关闭（Esc）" aria-label="关闭">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="viewer-split" id="viewer-split">
+    <div class="viewer-body" id="viewer-body"></div>
+    <aside class="aside" id="viewer-aside" hidden></aside>
+  </div>
+  <div class="blk-bar" id="blk-bar" hidden></div>
+</div>
+
+<div class="modal" id="modal" hidden><div class="modal-card" id="modal-card" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="file" hidden>
+
+<script src="markdown.js"></script>
+<script src="prompts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

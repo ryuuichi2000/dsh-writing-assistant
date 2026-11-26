@@ -1,0 +1,5 @@
+# 写作助手：Host 半边（两个 skill 的提供方、稿件库接口、后台写作执行器、五个模型工具）。
+# 浏览器半边由 package.json 的 dsh.client 声明加载（lib/client.js）。
+- insert:
+    - id: writing-assistant
+      name: 'dsh-writing-assistant'
